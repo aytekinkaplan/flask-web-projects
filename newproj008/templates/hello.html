@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello {{name}}</title>
+</head>
+<body>
+<h1>Hello {{name}}</h1>
+{%if score > 90%}
+<h2 style="color:red">Grade: A</h2>
+{%elif score > 80%}
+<h2 style="color:blue">Grade: B</h2>
+{%elif score > 70%}
+<h2 style="color:green">Grade: C</h2>
+{%elif score > 60%}
+<h2 style="color:purple">Grade: D</h2>
+{%else%}
+<h2 style="color:orange">Grade: F</h2>
+{%endif%}
+</body>
+</html>

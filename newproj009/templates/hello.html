@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premier League Stats</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Premier League Stats</h1>
+    <table>
+        <tr>
+            <th>Team</th>
+            <th>Position</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Drawn</th>
+            <th>Lost</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+            <th>Goal Difference</th>
+            <th>Points</th>
+        </tr>
+        {% for team, stats in premier_league_stats.items() %}
+        <tr>
+            <td>{{ team }}</td>
+            <td>{{ stats.position }}</td>
+            <td>{{ stats.played }}</td>
+            <td>{{ stats.won }}</td>
+            <td>{{ stats.drawn }}</td>
+            <td>{{ stats.lost }}</td>
+            <td>{{ stats.goals_for }}</td>
+            <td>{{ stats.goals_against }}</td>
+            <td>{{ stats.goal_difference }}</td>
+            <td>{{ stats.points }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

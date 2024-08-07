@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}My Web App{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .navbar { margin-bottom: 20px; }
+        .navbar a { margin-right: 15px; }
+        .content { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/services">Services</a>
+        <a href="/blog">Blog</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/team">Team</a>
+        <a href="/faq">FAQ</a>
+    </div>
+    <hr>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
