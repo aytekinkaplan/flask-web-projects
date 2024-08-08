@@ -1,11 +1,86 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
-{%block content%}
+{% block content %}
 <h1>Form with Flask</h1>
+
+<h2>Login</h2>
 <form method="POST" action="{{ url_for('index') }}">
-    <input type="text" name="username" placeholder="Enter your name"><br>
-    <input type="password" name="password" placeholder="Enter your password"><br>
-    <input type="submit" value="Login">
+  <input type="text" name="username" placeholder="Enter your name" /><br />
+  <input
+    type="password"
+    name="password"
+    placeholder="Enter your password"
+  /><br />
+  <input type="submit" value="Login" />
+</form>
+
+<h2>File Upload</h2>
+<form
+  method="POST"
+  action="{{ url_for('file_upload') }}"
+  enctype="multipart/form-data"
+>
+  <input
+    type="file"
+    name="file"
+    accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, text/csv, text/plain"
+    required
+  />
+  <input type="submit" value="Upload File" />
+</form>
+
+<h2>Convert To CSV</h2>
+<form
+  method="POST"
+  action="{{ url_for('convert_csv') }}"
+  enctype="multipart/form-data"
+>
+  <input
+    type="file"
+    name="file"
+    accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+    required
+  />
+  <input type="submit" value="Convert" />
+</form>
+
+<h2>Convert To CSV Two</h2>
+<form
+  method="POST"
+  action="{{ url_for('convert_csv_two') }}"
+  enctype="multipart/form-data"
+>
+  <input
+    type="file"
+    name="file"
+    accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+    required
+  />
+  <input type="submit" value="Convert" />
+</form>
+
+<h2>Convert using Pandas</h2>
+<form method="POST" action="{{ url_for('upload_file_pandas') }}" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx, .xls" required>
+    <input type="submit" value="Convert with Pandas">
+</form>
+
+<h2>Convert using Openpyxl</h2>
+<form method="POST" action="{{ url_for('upload_file_openpyxl') }}" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx, .xls" required>
+    <input type="submit" value="Convert with Openpyxl">
+</form>
+
+<h2>Convert using Pyexcel</h2>
+<form method="POST" action="{{ url_for('upload_file_pyexcel') }}" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx, .xls" required>
+    <input type="submit" value="Convert with Pyexcel">
+</form>
+
+<h2>Convert using Xlsx2csv</h2>
+<form method="POST" action="{{ url_for('upload_file_xlsx2csv') }}" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".xlsx, .xls" required>
+    <input type="submit" value="Convert with Xlsx2csv">
 </form>
 
 {% endblock %}
